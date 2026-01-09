@@ -1,0 +1,27 @@
+[build]
+  # Build command for the client
+  command = "npm run build"
+  # Directory where the built files are located
+  publish = "client/dist"
+  
+  # Functions directory
+  functions = "netlify/functions"
+
+[build.environment]
+  # Node version for Netlify Functions
+  NODE_VERSION = "18"
+
+# Redirect all API calls to Netlify Functions
+# This must come before the SPA redirect to work correctly
+[[redirects]]
+  from = "/api/translate"
+  to = "/.netlify/functions/translate"
+  status = 200
+  force = true
+
+# Handle client-side routing (SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
