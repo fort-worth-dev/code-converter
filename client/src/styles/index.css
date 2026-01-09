@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for CodeMirror */
+.cm-editor {
+  height: 100%;
+  font-size: 14px;
+}
+
+.cm-editor .cm-scroller {
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+.cm-editor.cm-focused {
+  outline: none;
+}
+
+/* Custom scrollbar for code editors */
+.cm-editor .cm-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.cm-editor .cm-scroller::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.cm-editor .cm-scroller::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+.cm-editor .cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Dropdown styles */
+.dropdown-item:hover {
+  @apply bg-primary-50;
+}
+
+.dropdown-item.highlighted {
+  @apply bg-primary-100;
+}
